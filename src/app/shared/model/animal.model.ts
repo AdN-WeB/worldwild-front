@@ -8,8 +8,9 @@ export class Animal{
     private _life:string;
     private _feed:string;
     private _imageUrl:string;
+    private _wikiLink:string;
 
-    constructor(id:number, name:string, race:string, size:string, weight:string, life:string, feed:string, imageUrl:string){
+    constructor(id:number, name:string, race:string, size:string, weight:string, life:string, feed:string, imageUrl:string, wikiLink:string){
         this._id=id;
         this._name=name;
         this._race =race;
@@ -18,8 +19,16 @@ export class Animal{
         this._life =life;
         this._feed=feed;
         this._imageUrl=imageUrl;
+        this._wikiLink = wikiLink;
+    } 
+
+    public get wikiLink(): string {
+        return this._wikiLink;
     }
 
+    public set wikiLink(wikiLink: string) {
+        this._wikiLink = wikiLink;
+    }
     public get id(): number {
         return this._id;
     }
