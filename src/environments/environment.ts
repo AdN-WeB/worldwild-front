@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8080/worldwild/',
+  imagesApiUrl: 'http://localhost:8080/worldwild/file/',
 };
 
 /*

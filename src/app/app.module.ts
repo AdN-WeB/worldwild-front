@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { PlantsComponent } from './plants/plants.component';
+import { AnimalCrudComponent } from './animal-crud/animal-crud.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { PlantsComponent } from './plants/plants.component';
     FooterComponent,
     DashboardComponent,
     AnimalsComponent,
-    PlantsComponent
+    PlantsComponent,
+    AnimalCrudComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
