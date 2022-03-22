@@ -15,6 +15,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AnimalCrudFormComponent } from './animal-crud-form/animal-crud-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './materials/material.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MaterialModule} from './materials/material.module';
     AnimalsComponent,
     PlantsComponent,
     AnimalCrudComponent,
-    AnimalCrudFormComponent
+    AnimalCrudFormComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
