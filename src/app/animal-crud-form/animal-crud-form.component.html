@@ -20,7 +20,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['name'].invalid &&
-          animalForm.controls['name'].errors!['maxlenght']
+          animalForm.controls['name'].errors!['maxlength']
         "
         >Le nom ne peut contenir plus de 100 caractères</mat-error
       >
@@ -38,7 +38,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['race'].invalid &&
-          animalForm.controls['race'].errors!['maxlenght']
+          animalForm.controls['race'].errors!['maxlength']
         "
         >La race ne peut contenir plus de 100 caractères</mat-error
       >
@@ -56,7 +56,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['size'].invalid &&
-          animalForm.controls['size'].errors!['maxlenght']
+          animalForm.controls['size'].errors!['maxlength']
         "
         >La description de la taille ne peut contenir plus de 100 caractères</mat-error
       >
@@ -74,7 +74,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['weight'].invalid &&
-          animalForm.controls['weight'].errors!['maxlenght']
+          animalForm.controls['weight'].errors!['maxlength']
         "
         >La description du poids ne peut contenir plus de 100 caractères</mat-error
       >
@@ -92,7 +92,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['life'].invalid &&
-          animalForm.controls['life'].errors!['maxlenght']
+          animalForm.controls['life'].errors!['maxlength']
         "
         >L'esperance de vie ne peut contenir plus de 100 caractères</mat-error
       >
@@ -110,7 +110,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['feed'].invalid &&
-          animalForm.controls['feed'].errors!['maxlenght']
+          animalForm.controls['feed'].errors!['maxlength']
         "
         >La description de l'allimentation ne peut contenir plus de 100 caractères</mat-error
       >
@@ -128,7 +128,7 @@
       <mat-error
         *ngIf="
           animalForm.controls['wikiLink'].invalid &&
-          animalForm.controls['wikiLink'].errors!['maxlenght']
+          animalForm.controls['wikiLink'].errors!['maxlength']
         "
         >Le lien vers la page wkipédia ne peut contenir plus de 100 caractères</mat-error
       >
@@ -138,10 +138,10 @@
       <div class="text-center bg-light mb-3 p-2">
         <p>Image (max 1MO)</p>
         <div class="text-center">
-          <label *ngIf="imageDownload != undefined" for="file" class="btn btn-primary">
+          <label *ngIf="imageDownload != undefined" for="file" class="btn btn-success">
             <mat-icon>add_photo_alternate</mat-icon>{{ imageDownload.name }}
           </label>
-          <label *ngIf="imageDownload == undefined" for="file" class="btn btn-primary">
+          <label *ngIf="imageDownload == undefined" for="file" class="btn btn-success">
             <mat-icon>add_photo_alternate</mat-icon
             >{{ image != undefined ? 'Modifier image ' : 'Choisir une image' }}
           </label>
@@ -152,7 +152,7 @@
 
     <div class="text-center">
         <button
-          class="btn btn-primary mb-2"
+          class="btn btn-success mb-2"
           type="submit"
           [disabled]="animalForm.invalid"
           mat-dialog-close

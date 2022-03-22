@@ -4,19 +4,17 @@
             <thead>
                 <tr class="table-success text-center">
                  <td class="table-success"> #</td>
-                 <td class="table-success">Image</td>
                  <td class="table-success">Nom</td>
-                 <td class="table-success">Race</td>
+                 <td class="table-success">Image</td>
                  <td class="table-success text-center">Action</td>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let animal of animals" class="table-success">
-                 <td class="table-success"> {{animal.id}}</td>
-                 <td class="table-success"> <img src="{{ imageUrl + animal.imageUrl}}" alt="photo animal" width="100px"> </td>
-                 <td class="table-success"> {{animal.name}}</td>
-                 <td class="table-success"> {{animal.race}}</td>
-                 <td class="table-success"> 
+                 <td class="table-success text-center" width="10%"> {{animal.id}}</td>
+                 <td class="table-success text-center" width="30%"> {{animal.name.length > 10 ? (animal.name | slice: 0:10)+'...' : animal.name}}</td>
+                 <td class="table-success"> <img src="{{ imageUrl + animal.imageUrl}}" alt="photo animal" width="100%" style="max-height: 70px"> </td>
+                 <td class="table-success" width="10%"> 
                     <button
                     class="mx-2"
                     mat-mini-fab
