@@ -1,0 +1,23 @@
+.main{
+ background-color: #d9ffd0;
+max-height: 78vh;
+ padding: 10px;
+ overflow: scroll;
+}
+.table-animals{
+    background-color: #ffffff;
+}
+td{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+@media (min-width:667px){
+
+    table{
+        width: 100%;
+    }
+    img{
+        width: 80%;
+        height: 250px;
+    }
+}

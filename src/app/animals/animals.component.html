@@ -3,7 +3,7 @@
     <div class="card-list">
         <div class="card" *ngFor="let animal of animals">
             <div class="card-image">
-                <img src="{{ imageUrl + animal.imageUrl }}" alt="Photo animal" width="100%" >
+                <img src="{{ imageUrl + animal.imageUrl }}" alt="Photo animal" >
             </div>
             <div class="card-text">
                 <h4>{{animal.name}}</h4>
@@ -14,7 +14,7 @@
                 <span>{{animal.feed}}</span>
             </div>
             <div class="card-button">
-                <a href="" target="_blank"><img src="assets/arrowR.png" alt="Lien vers wikipédia"></a>
+                <a href="{{animal.wikiLink}}" target="_blank"><img src="assets/arrowR.png" alt="Lien vers wikipédia"></a>
             </div>
         </div>
     </div>
