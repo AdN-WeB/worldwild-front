@@ -10,9 +10,8 @@ import { AnimalService } from '../shared/service/animal.service';
 })
 export class AnimalsComponent implements OnInit {
 
-  images:any[]=[];
   animals:Animal[];
-  imageUrl:any;
+  imageUrl:string;
 
   constructor(private animalService:AnimalService) {
     this.animals = [];
@@ -25,6 +24,9 @@ export class AnimalsComponent implements OnInit {
         animals.forEach((animal:Animal) =>{
           this.animals.push(animal)
         })
+      },
+      error: () => {
+        
       }
     });
   }
