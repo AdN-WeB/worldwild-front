@@ -1,1 +1,43 @@
-<p>animal-crud works!</p>
+<div class="main">
+    <div class="table-animals">
+        <table class="table-success">
+            <thead>
+                <tr class="table-success text-center">
+                 <td class="table-success"> #</td>
+                 <td class="table-success">Image</td>
+                 <td class="table-success">Nom</td>
+                 <td class="table-success">Race</td>
+                 <td class="table-success text-center">Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let animal of animals" class="table-success">
+                 <td class="table-success"> {{animal.id}}</td>
+                 <td class="table-success"> <img src="{{ imageUrl + animal.imageUrl}}" alt="photo animal" width="100px"> </td>
+                 <td class="table-success"> {{animal.name}}</td>
+                 <td class="table-success"> {{animal.race}}</td>
+                 <td class="table-success"> 
+                    <button
+                    class="mx-2"
+                    mat-mini-fab
+                    color="basic"
+                    style="margin: 0 2px"
+                    (click)="openUpdateForm(animal.id)"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button class="mx-2" mat-mini-fab color="warn" style="margin: 3px 2px">
+                    <mat-icon (click)="deleteAnimal(animal.id)">delete</mat-icon>
+                  </button></td>
+                </tr>
+                <tr class="table-success">
+                    <td class="table-success text-center" colspan="6"> 
+                      <button mat-mini-fab color="basic" (click)="openCreatedForm()">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

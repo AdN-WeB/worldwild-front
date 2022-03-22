@@ -1,0 +1,163 @@
+<div class="form d-flex justify-content-between">
+    <h2 class="mx-auto">
+        {{animal != undefined ? "Modifier" : "Créer"}}
+    </h2>
+    <button type="button" class="btn-close" mat-dialog-close></button>
+</div>
+<form class="container mx-auto"
+      (ngSubmit)="animalForm.valid && submitForm()"
+      [formGroup]="animalForm">
+      <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="name">Nom</mat-label>
+        <input name="name" matInput formControlName="name" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['name'].invalid &&
+          animalForm.controls['name'].errors!['required']
+        "
+        >Le nom est requis</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['name'].invalid &&
+          animalForm.controls['name'].errors!['maxlenght']
+        "
+        >Le nom ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="race">Race</mat-label>
+        <input name="race" matInput formControlName="race" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['race'].invalid &&
+          animalForm.controls['race'].errors!['required']
+        "
+        >La race est requis</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['race'].invalid &&
+          animalForm.controls['race'].errors!['maxlenght']
+        "
+        >La race ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="size">Taille</mat-label>
+        <input name="size" matInput formControlName="size" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['size'].invalid &&
+          animalForm.controls['size'].errors!['required']
+        "
+        >La description de la taille est requise</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['size'].invalid &&
+          animalForm.controls['size'].errors!['maxlenght']
+        "
+        >La description de la taille ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="weight">Poids</mat-label>
+        <input name="weight" matInput formControlName="weight" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['weight'].invalid &&
+          animalForm.controls['weight'].errors!['required']
+        "
+        >La description du poids est requis</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['weight'].invalid &&
+          animalForm.controls['weight'].errors!['maxlenght']
+        "
+        >La description du poids ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="life">Esperance de vie</mat-label>
+        <input name="life" matInput formControlName="life" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['life'].invalid &&
+          animalForm.controls['life'].errors!['required']
+        "
+        >L'esperance de vie est requise</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['life'].invalid &&
+          animalForm.controls['life'].errors!['maxlenght']
+        "
+        >L'esperance de vie ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="feed">Allimentation</mat-label>
+        <input name="feed" matInput formControlName="feed" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['feed'].invalid &&
+          animalForm.controls['feed'].errors!['required']
+        "
+        >L'allimentation est requise</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['feed'].invalid &&
+          animalForm.controls['feed'].errors!['maxlenght']
+        "
+        >La description de l'allimentation ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="mb-3" appearance="fill">
+        <mat-label name="wikiLink">Lien Wikipéia</mat-label>
+        <input name="wikiLink" matInput formControlName="wikiLink" />
+        <mat-error
+        *ngIf="
+          animalForm.controls['wikiLink'].invalid &&
+          animalForm.controls['wikiLink'].errors!['required']
+        "
+        >Le lien vers la page wkipédia est requis</mat-error
+      >
+      <mat-error
+        *ngIf="
+          animalForm.controls['wikiLink'].invalid &&
+          animalForm.controls['wikiLink'].errors!['maxlenght']
+        "
+        >Le lien vers la page wkipédia ne peut contenir plus de 100 caractères</mat-error
+      >
+    </mat-form-field>
+
+    <div class="mb-3">
+      <div class="text-center bg-light mb-3 p-2">
+        <p>Image (max 1MO)</p>
+        <div class="text-center">
+          <label *ngIf="imageDownload != undefined" for="file" class="btn btn-primary">
+            <mat-icon>add_photo_alternate</mat-icon>{{ imageDownload.name }}
+          </label>
+          <label *ngIf="imageDownload == undefined" for="file" class="btn btn-primary">
+            <mat-icon>add_photo_alternate</mat-icon
+            >{{ image != undefined ? 'Modifier image ' : 'Choisir une image' }}
+          </label>
+          <input type="file" id="file" name="image" accept="image/*" (change)="uploadFile($event)" />
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+        <button
+          class="btn btn-primary mb-2"
+          type="submit"
+          [disabled]="animalForm.invalid"
+          mat-dialog-close
+        >
+          {{ animal != undefined ? 'Modifier' : 'Créer' }}
+        </button>
+      </div>
+    </form>
