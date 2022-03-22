@@ -11,6 +11,11 @@ import { AnimalsComponent } from './animals/animals.component';
 import { PlantsComponent } from './plants/plants.component';
 import { AnimalCrudComponent } from './animal-crud/animal-crud.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { AnimalCrudFormComponent } from './animal-crud-form/animal-crud-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './materials/material.module';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +26,17 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardComponent,
     AnimalsComponent,
     PlantsComponent,
-    AnimalCrudComponent
+    AnimalCrudComponent,
+    AnimalCrudFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
