@@ -1,1 +1,21 @@
-<p>animals works!</p>
+<div class="main">
+    <h1>Les animaux</h1>
+    <div class="card-list">
+        <div class="card" *ngFor="let animal of animals">
+            <div class="card-image">
+                <img src="{{ imageUrl + animal.imageUrl }}" alt="Photo animal" width="100%" >
+            </div>
+            <div class="card-text">
+                <h4>{{animal.name}}</h4>
+                <span>{{animal.race}}</span>
+                <span>{{animal.size}}</span>
+                <span>{{animal.weight}}</span>
+                <span>{{animal.life}}</span>
+                <span>{{animal.feed}}</span>
+            </div>
+            <div class="card-button">
+                <a href="" target="_blank"><img src="assets/arrowR.png" alt="Lien vers wikipédia"></a>
+            </div>
+        </div>
+    </div>
+</div>

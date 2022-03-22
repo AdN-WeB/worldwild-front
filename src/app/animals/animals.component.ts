@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Animal } from '../shared/model/animal.model';
+import { AnimalService } from '../shared/service/animal.service';
 
 @Component({
   selector: 'app-animals',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalsComponent implements OnInit {
 
-  constructor() { }
+  animals:Animal[];
+  imageUrl:string;
+
+  constructor(private animalService:AnimalService) {
+    this.animals = [];
+    this.imageUrl = environment.imagesApiUrl
+   }
 
   ngOnInit(): void {
+    this.animalService.getAnimals().subscribe({
+      next: (animals:Animal[]) =>{
+        animals.forEach((animal:Animal) =>{
+          this.animals.push(animal)
+        })
+      },
+      error: () => {
+        
+      }
+    });
   }
 
 }
