@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimalsComponent } from './animals/animals.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { PlantsComponent } from './plants/plants.component';
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
   },
+  {
+    path:'**',
+    component:NotFoundComponent
+  }
 ];
 
 @NgModule({
