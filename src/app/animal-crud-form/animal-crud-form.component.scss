@@ -53,7 +53,13 @@ input[type="file"] {
   }
 
   .cdk-overlay-pane {
-    width: 50% !important ;
+    width: 50% ;
+  }
+  @media (max-width:500px) {
+    .cdk-overlay-pane{
+      width: 80%;
+    }
+    
   }
 }
 form {
